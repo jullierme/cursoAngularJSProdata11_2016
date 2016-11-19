@@ -10,4 +10,12 @@ function IndexController($scope) {
     function ola() {
         alert('Olá');
     }
+
+    $scope.$on('testeEnvioEvento', onTesteEnvioEvento);
+
+    function onTesteEnvioEvento(event, data) {
+        var teste = data;
+
+        console.log('Nome: ', event.currentScope.nome)
+    }
 }
