@@ -11,8 +11,10 @@
             'ngMaterial',
             'ui.router',
             'oc.lazyLoad',
-            'pdAppArquitetura'
+            'pdAppArquitetura',
+            'LocalStorageModule'
         ]
-    );
+    )
+    ;
 
 })();

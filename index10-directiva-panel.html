@@ -40,6 +40,7 @@
     <script src="arquitetura/directivas/pd-input-text/pd-input-text.directive.js"></script>
     <script src="arquitetura/directivas/pd-crud/pd-crud.directive.js"></script>
     <script src="arquitetura/directivas/pd-panel/pd-panel.directive.js"></script>
+    <script src="arquitetura/directivas/pd-select/pd-select.directive.js"></script>
 
     <script src="app/config/pd-rotas.config.js"></script>
     <script src="app/controller/index9-directiva-crud.controller.js"></script>
@@ -53,6 +54,36 @@
 <body ng-app="pdApp"
       class="container"
       ng-controller="CadastroCarroController as vm">
+
+<pd-panel exibir-footer="false" class-panel="panel-danger">
+    <pd-panel-header>
+        teste
+    </pd-panel-header>
+    <pd-panel-body>
+        <div class="row">
+            <pd-select
+                    label="Sexo"
+                    colspan="3"
+                    provider="vm.sexo"
+                    ng-model="vm.entidade.sexo"
+                >
+            </pd-select>
+
+            <pd-select
+                    label="Tipo de pessoa"
+                    colspan="3"
+                    provider="vm.tipoPessoa"
+                    ng-model="vm.entidade.tipoPessoa"
+                    propriedade-valor="tipo"
+                    propriedade-descricao="nome"
+                    ng-required="true"
+            >
+            </pd-select>
+
+            {{vm.entidade}}
+        </div>
+    </pd-panel-body>
+</pd-panel>
 
 <pd-panel>
     <pd-panel-header>
@@ -132,20 +163,7 @@
 </pd-panel>
 
 
-<pd-panel exibir-footer="false" class-panel="panel-danger">
-    <pd-panel-header>
-        teste
-    </pd-panel-header>
-    <pd-panel-body>
-        <div class="row">
-            <pd-input-text
-                    label="Teste input"
-                    colspan="4"
-                    placeholder="Teste">
-            </pd-input-text>
-        </div>
-    </pd-panel-body>
-</pd-panel>
+
 
 </body>
 </html>

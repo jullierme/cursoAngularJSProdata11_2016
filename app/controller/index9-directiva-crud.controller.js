@@ -9,6 +9,16 @@
 
         vm.entidade = {};
 
+        vm.sexo = [
+            {valor:'M', descricao:'Masculino'},
+            {valor:'F', descricao:'Feminino'}
+        ];
+
+        vm.tipoPessoa = [
+            {tipo:'F', nome:'Física'},
+            {tipo:'J', nome:'Jurídica'}
+        ];
+
         vm.salvar = salvar;
         vm.limpar = limpar;
         vm.excluir = excluir;
