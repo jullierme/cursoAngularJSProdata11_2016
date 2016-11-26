@@ -17,6 +17,8 @@
 
     <link rel="stylesheet" href="app/css/style.css">
 
+    <link rel="stylesheet" href="arquitetura/directivas/pd-crud/pd-crud.css">
+
     <!-- fim css -->
 
     <!-- início js -->
@@ -33,35 +35,44 @@
     <script src="node_modules/oclazyload/dist/ocLazyLoad.js"></script>
 
     <script src="app/config/pd-app.js"></script>
+
+    <script src="arquitetura/directivas/pd-hello-world/pd-hello-world.directive.js"></script>
+    <script src="arquitetura/directivas/pd-input-text/pd-input-text.directive.js"></script>
+    <script src="arquitetura/directivas/pd-crud/pd-crud.directive.js"></script>
+
     <script src="app/config/pd-rotas.config.js"></script>
-    <script src="app/controller/index.router.controller.js"></script>
+    <script src="app/controller/index9-directiva-crud.controller.js"></script>
+
     <script src="app/service/alert.service.js"></script>
     <script src="app/filter/maiusculo.filter.js"></script>
 
 
     <!-- fim js -->
 </head>
-<body ng-app="pdApp" class="container"
-      ng-controller="IndexRouterController as vmIndexController">
+<body ng-app="pdApp"
+      class="container"
+      ng-controller="CadastroCarroController as vm">
+
+
+<pd-crud titulo="Cadastro de carro"
+         salvar="vm.salvar()"
+         excluir="vm.excluir()"
+         limpar="vm.limpar()">
     <div class="row">
-        <div class="col-md-12">
-            <md-nav-bar>
-                <md-nav-item md-nav-click="vmIndexController.abrirPagina('cadastroCarro')">
-                    Cadastro de carro
-                </md-nav-item>
-                <md-nav-item md-nav-click="vmIndexController.abrirPagina('pesquisaCarro')">
-                    Pesquisa de carro
-                </md-nav-item>
-            </md-nav-bar>
-        </div>
+        <pd-input-text label="Nome"
+                       placeholder="Nome do carro"
+                       ng-model="vm.entidade.nome"
+                       colspan="3">
+        </pd-input-text>
+
+        <pd-input-text label="Marca"
+                       placeholder="Marca do carro"
+                       ng-model="vm.entidade.marca"
+                       colspan="3">
+        </pd-input-text>
     </div>
-    <!--<div>
-        <a ui-sref="cadastroCarro">Cadastro de carro</a>
-        <a ui-sref="pesquisaCarro">Pesquisa de carro</a>
-    </div>
-    -->
-    <div><!-- corpo-->
-        <ui-view></ui-view>
-    </div>
+</pd-crud>
+
+
 </body>
 </html>

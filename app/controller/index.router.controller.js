@@ -2,10 +2,12 @@
 angular.module('pdApp')
     .controller('IndexRouterController', IndexRouterController);
 
-function IndexRouterController($scope, $state) {
-    $scope.abrirPagina = abrirPagina;
+function IndexRouterController($state) {
+    var vm = this;
+
+    vm.abrirPagina = abrirPagina;
 
     function abrirPagina(nomeState) {
-        $state.go(nomeState);
+        $state.go(nomeState, {id: 10});
     }
 }
