@@ -1,0 +1,10 @@
+<div ng-controller="CadastroProdutoController as vm">
+    <pd-super-crud titulo="Cadastro de produto"
+                   service="vm.pdCrudService">
+        <div class="row">
+            <pd-input-text label="Nome"
+                           ng-model="vm.pdCrudService.entidade.nome">
+            </pd-input-text>
+        </div>
+    </pd-super-crud>
+</div>

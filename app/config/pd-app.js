@@ -12,9 +12,15 @@
             'ui.router',
             'oc.lazyLoad',
             'pdAppArquitetura',
-            'LocalStorageModule'
+            'LocalStorageModule',
+            'angular-loading-bar'
         ]
-    )
+    ).config(config)
     ;
 
+    config.$inject = ['cfpLoadingBarProvider'];
+
+    function config(cfpLoadingBarProvider) {
+        cfpLoadingBarProvider.includeSpinner = false;
+    }
 })();
